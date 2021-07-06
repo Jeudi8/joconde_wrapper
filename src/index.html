@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="center-child">
+    <div>
+      <h1>Add your zipped app</h1>
+      <input
+        id="zip"
+        type="file"
+        accept=".zip,.rar,.7zip"
+        style="outline: solid"
+      />
+      <br />
+      <br />
+      <h1>Load current app if any</h1>
+      <button id="load">Load App</button>
+      <p id="log" style="color: wheat; position: absolute; bottom: 0"></p>
+    </div>
+  </body>
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    const inputDOM = document.getElementById('zip');
+    inputDOM.addEventListener('change', (e) => {
+      if (e?.target?.files?.length) {
+        const zip = e.target.files[0];
+        ipcRenderer.send('ipcZip', zip.path);
+      }
+    });
+
+    const btnDOM = document.getElementById('load');
+    btnDOM.addEventListener('click', () => ipcRenderer.send('ipcLoadApp'));
+
+    const log = document.getElementById('log');
+    ipcRenderer.on('log', (_, ...rest) => (log.innerText = `${rest}\n`));
+  </script>
+</html>
