@@ -11,7 +11,7 @@
 - [x] fullscreen on launch
 - [x] exit app forbidden
 - [x] default pinch disabled
-- [x] auto update
+- [ ] auto update
 
 ## Scripts
 
