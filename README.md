@@ -1,4 +1,4 @@
-# Nasjonalmuseet Device Wrapper
+# Wrapper
 
 Wrapping web app. Made whith electron & electron-forge.
 
