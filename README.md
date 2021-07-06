@@ -1,11 +1,8 @@
 # Wrapper
 
-Wrapping web app. Made whith electron & electron-forge.
-
-## Authors
-
-- Company : **Artisants d'idées - Jeudi8**
-- Dev : **Jonathan ATTAR**
+- Wrap web app into electron.
+- Made whith electron & electron-forge.
+- Authors : **Artisants d'idées, Jeudi8, Jonathan ATTAR**
 
 ## Description
 
